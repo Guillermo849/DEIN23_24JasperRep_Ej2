@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informe_acenda" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e6b06b10-ccb8-4040-8633-af7699d213c8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AgendaDB"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM persona]]>
+	</queryString>
+	<field name="dni" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="apellido1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="apellido2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="edad"/>
+		<property name="com.jaspersoft.studio.field.label" value="edad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="20" width="100" height="30" uuid="d479b745-4bf2-408f-9dc7-addb2297a17a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="26"/>
+				</textElement>
+				<text><![CDATA[Agenda]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="193" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="480" height="154" uuid="d070dd9b-d08a-4eea-8e7f-330c048e027d"/>
+				<staticText>
+					<reportElement x="59" y="9" width="211" height="161" uuid="61070f47-8d27-4a98-98c7-d91333e39f14"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="19"/>
+					</textElement>
+					<text><![CDATA[DNI:
+NOMBRE:
+PRIMER APELLIDO:
+SEGUNDO APELLIDO:
+EDAD:
+LOGIN:
+AÑO DE NACIMIENTO:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="280" y="10" width="100" height="21" uuid="7155e323-b932-46e5-ac7a-23e91c93f2dd"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="31" width="100" height="21" uuid="ce14cb95-13cc-4ed4-8ed6-723583e657c4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="52" width="100" height="29" uuid="e8581267-f83d-4d08-af51-5a312ef056fe"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{apellido1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="79" width="100" height="21" uuid="3a676664-5844-41b3-89f7-b853ff125bb1"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{apellido2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="100" width="100" height="21" uuid="2c736145-9e94-4182-8d4a-7730cace2159"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="140" width="99" height="21" uuid="c3f237ab-e39d-4252-83e4-2204b31321e6"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date().getYear()+1900-$F{edad}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-2" y="180" width="482" height="1" uuid="b7c3380c-eaf1-401d-870b-df22582a424d"/>
+				</line>
+				<textField>
+					<reportElement x="280" y="120" width="100" height="21" uuid="bd4f87f3-02eb-4751-97b4-fdaa8531a99e"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{apellido1}.substring(0, 2).concat($F{apellido2}.substring(0,2).concat($F{nombre}.substring(0,2))).toLowerCase()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>
